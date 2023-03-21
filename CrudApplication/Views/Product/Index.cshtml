@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CrudApplication.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Pager pager =new Pager();
+    int pageNo = 0;
+    if(ViewBag.Pager !=null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.currentPages;
+    }
+}
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">Prouct Details</h1>
+            <a class=" btn btn-sm btn-success m-1 "asp-controller="Product" asp-action="Create">Create</a>
+            <table class="table table-boarded">
+                <tr class="text-center">
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>CategoryID</th>
+                    <th>CategoryName</th>
+                    <th>Action</th>
+                </tr>
+                @foreach(var d in Model)
+                {
+                    <tr class="text-center">
+                        <td>@d.ProductId</td>
+                        <td>@d.ProductName</td>
+                        <td>@d.CatagoryId</td>
+                        <td>@d.CategoryName</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" asp-controller="Product" asp-action="Edit" asp-route-id="@d.ProductId">Edit</a>
+                             <a class="btn btn-sm btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@d.ProductId">Delete</a>    
+                             
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="contaner">
+    @if (pager.TatalPages>0)
+    {
+        
+    }
+</div>
+

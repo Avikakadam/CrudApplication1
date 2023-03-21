@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card-header">
+                <h1 class="text-center text-primary">Add Product</h1>
+            </div>
+            <div class=" card-body">
+                <form method="post" asp-action="Create">
+                    <div class="form-grop">
+                        <label asp-for="ProductId"> </label>
+                        <input type="text" asp-for="ProductId" class="form-control"
+                        placeholder="Enter ProductID"/>
+                    </div>
+                     <div class="form-grop">
+                        <label asp-for="ProductName"> </label>
+                        <input type="text" asp-for="ProductName" class="form-control"
+                        placeholder="Enter ProductName"/>
+                    </div>
+                     <div class="form-grop">
+                        <label asp-for="CategoryId"> </label>
+                        <input type="text" asp-for="CategoryId" class="form-control"
+                        placeholder="Enter CategoryId"/>
+                    </div>
+                     <div class="form-grop">
+                        <label asp-for="CategoryName"> </label>
+                        <input type="text" asp-for="CategoryName" class="form-control"
+                        placeholder="Enter CategoryName"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-sm btn-outline-success floatright"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
